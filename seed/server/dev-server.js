@@ -1,4 +1,4 @@
-const webpackMiddleware = require('lib');
+const webpackMiddleware = require('webpack-dev-middleware');
 const express = require('express');
 const webpack = require('webpack');
 const webpackConfig = require('build/webpack.config.dev');

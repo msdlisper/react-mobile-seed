@@ -20,7 +20,22 @@
 import {
     render
 } from 'react-dom';
-import {h} from './lib/utils/default';
+import {
+    h,
+    Provider
+} from './lib/utils/default';
+import {
+    Message
+} from './lib/component/Message';
+
 render(
-    h.div('hi', {}, 'hhhh'), document.getElementById('root')
+    h(Provider, {
+            context: {
+                a: 'red'
+            }
+        },
+        h(Message, {
+            text: 'hi'
+        })),
+    document.getElementById('root')
 )

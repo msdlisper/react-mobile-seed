@@ -1,32 +1,51 @@
 import App from './App';
-import Template from './project/Template';
-import Old from './project/Old';
+// import Template from './project/Template';
+// import Old from './project/Old';
 
 
 export const routes = {
     path: '/',
     component: App,
     indexRoute: {
-        component: Template
+        getComponent(location, callback) {
+            require.ensure([], () => {
+                let Page = require('./project/Template').default;
+                callback(null, Page);
+            });
+        },
     },
     childRoutes: [{
         path: 'template',
         // component: Template,
+        indexRoute: {
+            getComponent(location, callback) {
+                require.ensure([], () => {
+                    let Page = require('./project/Template').default;
+                    callback(null, Page);
+                });
+            },
+        },
 
         childRoutes: [{
             path: 'old',
-            component: Old,
-            onChange(prevState, nextState, replace, cb) {
-                console.log(prevState)
-                replace('/old');
+            indexRoute: {
+                getComponent(location, callback) {
+                    require.ensure([], () => {
+                        let Page = require('./project/Old').default;
+                        callback(null, Page);
+                    });
+                },
             },
         }]
     }, {
         path: 'old',
-        component: Template,
-        onChange(prevState, nextState, replace, cb) {
-            console.log(prevState)
-            // replace('old');
-        }
+        indexRoute: {
+            getComponent(location, callback) {
+                require.ensure([], () => {
+                    let Page = require('./project/Old').default;
+                    callback(null, Page);
+                });
+            },
+        },
     }]
 }

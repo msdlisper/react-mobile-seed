@@ -22,7 +22,8 @@ import {
 } from 'react-dom';
 import {
     hashHistory,
-    Router
+    Router,
+    Redirect
 } from 'react-router';
 import {
     h,

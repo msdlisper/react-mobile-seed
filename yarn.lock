@@ -2624,7 +2624,7 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-less-loader@^4.0.5:
+less-loader@4.0.5:
   version "4.0.5"
   resolved "http://registry.npm.taobao.org/less-loader/download/less-loader-4.0.5.tgz#ae155a7406cac6acd293d785587fcff0f478c4dd"
   dependencies:
@@ -2632,9 +2632,9 @@ less-loader@^4.0.5:
     loader-utils "^1.1.0"
     pify "^2.3.0"
 
-less@^3.0.0-alpha.3:
-  version "3.0.0-alpha.3"
-  resolved "http://registry.npm.taobao.org/less/download/less-3.0.0-alpha.3.tgz#d3da9234fd16e60a47d6291e772e65a841ec8410"
+less@2.7.0:
+  version "2.7.0"
+  resolved "http://registry.npm.taobao.org/less/download/less-2.7.0.tgz#0ebda1046f1c24efc696e52d353bd8c18ef07b10"
   optionalDependencies:
     errno "^0.1.1"
     graceful-fs "^4.1.2"

@@ -28,6 +28,7 @@
     "birdv3": "0.3.30",
     "express": "4.16.1",
     "fastdom": "1.0.6",
+    "happypack": "4.0.0",
     "less": "2.7.0",
     "lodash": "4.17.4",
     "mobx": "3.3.1",

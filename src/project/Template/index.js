@@ -41,7 +41,7 @@ export default class extends Component {
 
     render() {
         return h.div(style.locals.pageUse, {},
-            'hi!'
+            h.div('test', {}, 'hi')
         );
     }
 }

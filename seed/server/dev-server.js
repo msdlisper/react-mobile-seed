@@ -28,6 +28,9 @@ app.all('/*.html', function (req, res) {
     
     res.send(html);
 });
+
+// dll
+app.use('/dll', express.static(config.path.dll))
 // app.all('/*.html', express.static('/dist'));
 app.listen(port, function () {
     console.log(['info: Server running on http://localhost:' + port]);

@@ -14,6 +14,7 @@ import {
 import style from './page.use.less';
 
 import fastdom from 'fastdom';
+import moment from 'moment';
 
 @inject('context') @observer
 export default class extends Component {
@@ -41,7 +42,7 @@ export default class extends Component {
 
     render() {
         return h.div(style.locals.pageUse, {},
-            h.div('test', {}, 'hi')
+            h.div('test', {}, 'hi ' + moment().format('MMMM Do YYYY, h:mm:ss a'))
         );
     }
 }

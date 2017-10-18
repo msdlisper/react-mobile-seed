@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dll": "webpack --config seed/node_modules/build/dll.webpack.config.dev.js",
-    "dev": "node seed/server/dev-server"
+    "dll": "webpack --config seed/node_modules/build/dll.webpack.config.prod.js && webpack --config seed/node_modules/build/dll.webpack.config.dev.js",
+    "dev": "node seed/server/dev-server",
+    "dest": "node seed/server/dest-server",
+    "prod": "node seed/server/prod-server"
   },
   "keywords": [],
   "author": "",
@@ -18,15 +20,18 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-stage-0": "6.24.1",
     "birdv3": "0.3.30",
+    "colors": "1.1.2",
     "css-loader": "0.28.4",
+    "delete": "1.1.0",
     "express": "4.16.1",
     "file-loader": "0.11.2",
+    "fs-extra": "^4.0.2",
     "happypack": "4.0.0",
     "less-loader": "4.0.5",
     "style-loader": "0.18.2",
     "webpack": "3.1.0",
-    "webpack-dev-middleware": "1.12.0",
-    "webpack-bundle-analyzer": "2.8.3"
+    "webpack-bundle-analyzer": "2.8.3",
+    "webpack-dev-middleware": "1.12.0"
   },
   "dependencies": {
     "fastdom": "1.0.6",

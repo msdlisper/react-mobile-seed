@@ -1,5 +1,5 @@
 /node_modules/
 .idea
-dist
+dest
 seed/server/birdfile.js
 config.sh

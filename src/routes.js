@@ -1,6 +1,9 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 import App from './App';
-// import Template from './project/Template';
-// import Old from './project/Old';
 
 
 export const routes = {
@@ -23,29 +26,29 @@ export const routes = {
                     let Page = require('./project/Template').default;
                     callback(null, Page);
                 });
-            },
+            }
         },
 
         childRoutes: [{
-            path: 'old',
+            path: 'test',
             indexRoute: {
                 getComponent(location, callback) {
                     require.ensure([], () => {
-                        let Page = require('./project/Old').default;
+                        let Page = require('./project/Test').default;
                         callback(null, Page);
                     });
-                },
-            },
+                }
+            }
         }]
     }, {
-        path: 'old',
+        path: 'test',
         indexRoute: {
             getComponent(location, callback) {
                 require.ensure([], () => {
-                    let Page = require('./project/Old').default;
+                    let Page = require('./project/Test').default;
                     callback(null, Page);
                 });
-            },
-        },
+            }
+        }
     }]
-}
+};

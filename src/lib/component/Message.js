@@ -1,3 +1,8 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 import {
     React,
     h,
@@ -9,13 +14,13 @@ import {
 export class Message extends React.Component {
 
     fun = () => {
-        console.log('ss')
+        console.log('ss');
     }
     render() {
         // return  <div > {this.props.text} <Button> Delete </Button> </div>;
         return h.div({},
             this.props.text,
             h(Button, {}, 'Delete')
-        )
+        );
     }
 }

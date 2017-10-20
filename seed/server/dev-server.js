@@ -1,3 +1,9 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
+
 const webpackMiddleware = require('webpack-dev-middleware');
 const express = require('express');
 const webpack = require('webpack');
@@ -54,6 +60,6 @@ const start = function () {
     app.listen(port, function () {
         console.log(['info: Server running on http://localhost:' + port]);
     });
-}
+};
 
 init();

@@ -1,3 +1,8 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 const path = require('path');
 const birdv3 = require('birdv3');
 const config = require('config');

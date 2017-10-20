@@ -1,4 +1,16 @@
-import {Component, h, observer, observable, action, inject} from 'lib/utils/default';
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
+import {
+    Component,
+    h,
+    observer,
+    observable,
+    action,
+    inject
+} from 'lib/utils/default';
 
 @inject('context') @observer
 export default class App extends Component {
@@ -9,16 +21,15 @@ export default class App extends Component {
         this.state = this.props.context.app;
     }
 
-   
     componentWillMount() {
-      
+
     }
 
     componentWillReceiveProps(nextProps) {}
 
-    
+
     render() {
-		return h.div('content', {},
+        return h.div('content', {},
             this.props.children
         );
     }

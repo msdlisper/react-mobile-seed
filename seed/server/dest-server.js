@@ -1,3 +1,8 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 const webpack = require('webpack');
 const fs = require('fs');
 const del = require('delete');

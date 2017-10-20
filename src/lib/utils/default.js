@@ -1,3 +1,8 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 export {default as h} from './react-helper';
 export {default as ReactDOM, render} from 'react-dom';
 export {default as React, Component, cloneElement} from 'react';

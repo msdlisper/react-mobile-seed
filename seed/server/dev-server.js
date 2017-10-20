@@ -47,9 +47,9 @@ const start = function () {
 
     // dll
     app.use('/dll', express.static(config.path.dllDev));
-    app.use('/js', express.static(config.path.prod + 'js/'));
-    app.use('/images', express.static(config.path.prod + 'images/'));
-    
+    app.use('/js', express.static(config.path.dev + 'js/'));
+    app.use('/images', express.static(config.path.dev + 'images/'));
+
     app.all('*', birdv3(birdfile));
     app.listen(port, function () {
         console.log(['info: Server running on http://localhost:' + port]);

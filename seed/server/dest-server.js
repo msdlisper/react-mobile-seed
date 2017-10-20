@@ -18,7 +18,7 @@ const init = function () {
 }
 
 const start = function () {
-	
+
 
     // Remove dest content
     del.sync(config.path.prod);

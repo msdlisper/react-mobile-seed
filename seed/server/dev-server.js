@@ -33,7 +33,7 @@ const start = function () {
         log(message) {
             console.log('info: ' + message);
         },
-        publicPath: '/js/'
+        publicPath: '/'
     }));
 
     app.all('/*.html', function (req, res) {
@@ -47,6 +47,9 @@ const start = function () {
 
     // dll
     app.use('/dll', express.static(config.path.dllDev));
+    app.use('/js', express.static(config.path.prod + 'js/'));
+    app.use('/images', express.static(config.path.prod + 'images/'));
+    
     app.all('*', birdv3(birdfile));
     app.listen(port, function () {
         console.log(['info: Server running on http://localhost:' + port]);

@@ -9,6 +9,7 @@ const port = process.argv[2] || 3000;
 
 app.use('/js', express.static(config.path.prod + 'js/'));
 app.use('/dll', express.static(config.path.prod + 'dll/'));
+app.use('/images', express.static(config.path.prod + 'images/'));
 
 app.all('/*.html', express.static(config.path.prod));
 app.all('*', birdv3(birdfile));

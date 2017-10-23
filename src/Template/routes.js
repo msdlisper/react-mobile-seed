@@ -12,7 +12,7 @@ export const routes = {
     indexRoute: {
         getComponent(location, callback) {
             require.ensure([], () => {
-                let Page = require('./project/Template').default;
+                let Page = require('./Template').default;
                 callback(null, Page);
             });
         },
@@ -23,7 +23,7 @@ export const routes = {
         indexRoute: {
             getComponent(location, callback) {
                 require.ensure([], () => {
-                    let Page = require('./project/Template').default;
+                    let Page = require('./Template').default;
                     callback(null, Page);
                 });
             }
@@ -34,7 +34,7 @@ export const routes = {
             indexRoute: {
                 getComponent(location, callback) {
                     require.ensure([], () => {
-                        let Page = require('./project/Test').default;
+                        let Page = require('./Test').default;
                         callback(null, Page);
                     });
                 }
@@ -45,7 +45,7 @@ export const routes = {
         indexRoute: {
             getComponent(location, callback) {
                 require.ensure([], () => {
-                    let Page = require('./project/Test').default;
+                    let Page = require('./Test').default;
                     callback(null, Page);
                 });
             }

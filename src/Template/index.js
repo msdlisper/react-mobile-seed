@@ -15,10 +15,10 @@ import {
 import {
     h,
     Provider
-} from './lib/utils/default';
+} from 'utils/default';
 import {
     Message
-} from './lib/component/Message';
+} from 'component/Message';
 
 import {
     routes

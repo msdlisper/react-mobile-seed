@@ -10,13 +10,11 @@ import {
     action,
     inject,
     observable
-} from '../../lib/utils/default';
+} from 'utils/default';
 
 import style from './page.use.less';
 
 import fastdom from 'fastdom';
-import moment from 'moment';
-import messageIcon from 'images/message.png';
 
 @inject('context') @observer
 export default class extends Component {
@@ -44,8 +42,7 @@ export default class extends Component {
 
     render() {
         return h.div(style.locals.pageUse, {},
-            h.img({src: messageIcon}),
-            h.div('test', {}, 'hi ' + moment().format('MMMM Do YYYY, h:mm:ss a'))
+            'hi!old'
         );
     }
 }

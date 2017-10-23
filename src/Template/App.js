@@ -10,7 +10,7 @@ import {
     observable,
     action,
     inject
-} from 'lib/utils/default';
+} from 'utils/default';
 
 @inject('context') @observer
 export default class App extends Component {

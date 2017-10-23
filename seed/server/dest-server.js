@@ -23,7 +23,7 @@ const init = function () {
 }
 
 const start = function () {
-
+    const webpackConfig = require('build/webpack.config.prod');
 
     // Remove dest content
     del.sync(config.path.prod);
@@ -33,6 +33,8 @@ const start = function () {
     fse.copy(config.path.dllProd, config.path.prod + '/dll');
 
     // 模板替换
+    const entries = require('build/entry.config');
+    webpackConfig.entry = entries;
     const prodHtml = utils.replaceTemplate(htmlContent, {
         buildTime: utils.getBuildTime(),
         envPrefix: 'qa' // #TODO 根据输入参数来指定发版的前缀
@@ -43,7 +45,7 @@ const start = function () {
 
 
     // 构建
-    const webpackConfig = require('build/webpack.config.prod');
+    
     const compiler = webpack(webpackConfig);
     compiler.run(function (err, stats) {
         if (err) {

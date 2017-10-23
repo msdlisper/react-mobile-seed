@@ -17,6 +17,7 @@ const port = 3000;
 const fs = require('fs');
 const htmlPath = config.path.templateDevHtml;
 
+
 // 判断是否符合启动条件
 const init = function () {
     if (utils.isExist(config.path.dllDev)) {
@@ -29,6 +30,8 @@ const init = function () {
 // 启动服务器
 const start = function () {
     const webpackConfig = require('build/webpack.config.dev');
+    const entries = require('build/entry.config');
+    webpackConfig.entry = entries;
     const compiler = webpack(webpackConfig);
     app.use(webpackMiddleware(compiler, {
         noInfo: false,
@@ -43,10 +46,12 @@ const start = function () {
     }));
 
     app.all('/*.html', function (req, res) {
+        let pathName = /(?:\/)(\w+?)(?=.html)/.exec(req.path)[1];
         const html = fs.readFileSync(htmlPath).toString();
         // 模板替换
         const devHtml = utils.replaceTemplate(html, {
-            envPrefix: 'dev' // #TODO 根据输入参数来指定发版的前缀
+            envPrefix: 'dev', // #TODO 根据输入参数来指定发版的前缀
+            entryName: pathName
         });
         res.send(devHtml);
     });

@@ -10,8 +10,8 @@ const config = require('config');
 const utils = require('utils');
 const htmlPath = config.path.templateProdHtml;
 const htmlContent = fs.readFileSync(htmlPath).toString();
-const fse = require('fs-extra')
-
+const fse = require('fs-extra');
+const _ = require('lodash');
 
 // 判断是否符合启动条件
 const init = function () {
@@ -35,12 +35,16 @@ const start = function () {
     // 模板替换
     const entries = require('build/entry.config');
     webpackConfig.entry = entries;
-    const prodHtml = utils.replaceTemplate(htmlContent, {
-        buildTime: utils.getBuildTime(),
-        envPrefix: 'qa' // #TODO 根据输入参数来指定发版的前缀
-    });
+    _.each(entries, function (value, key){
+        const prodHtml = utils.replaceTemplate(htmlContent, {
+            buildTime: utils.getBuildTime(),
+            entryName: key,
+            envPrefix: 'qa' // #TODO 根据输入参数来指定发版的前缀
+        });
+        fs.writeFileSync(config.path.destTargetHtml + key + '.html', prodHtml);
+    })
+    
 
-    fse.writeFileSync(config.path.destTargetHtml, prodHtml);
 
 
 

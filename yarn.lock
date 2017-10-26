@@ -4215,7 +4215,7 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-shell-promise@^1.0.0:
+shell-promise@1.0.0, shell-promise@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shell-promise/-/shell-promise-1.0.0.tgz#6b8fa7cf33e16cb7296d622bf419850a963455eb"
 

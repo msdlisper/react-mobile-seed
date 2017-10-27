@@ -17,10 +17,10 @@ const gitNpm = {
         const versionString = fs.readFileSync(versionPath).toString();
         return JSON.parse(versionString);
     },
+
     /**
      * 将所有的公用库拉下来
      * 循环每一个repo, 并且要等到都resolve才结束程序
-     * 
      */
     init: function () {
         const versions = gitNpm.readVersion();
@@ -42,6 +42,7 @@ const gitNpm = {
         })
 
     },
+
     /**
      * 当你在本地修改了公用库, 使用这个命令来锁定你项目使用的版本(commit hash)
      * @return {[type]} [description]
@@ -61,15 +62,15 @@ const gitNpm = {
                         let h = _.trim(hash);
                         versions[version].hash = h;
                         return versions;
-                    })
-                promiseArray.push(p)
+                    });
+                promiseArray.push(p);
 
             }
         }
         const promise = Promise.all(promiseArray).then(function (re) {
-            fs.writeFileSync(config.path.befe + 'version.json', JSON.stringify(re[0], null, 4))
+            fs.writeFileSync(config.path.befe + 'version.json', JSON.stringify(re[0], null, 4));
             utils.logs(['info:已将version.json锁定']);
-        })
+        });
     },
     update: function () {
         const versions = gitNpm.readVersion();
@@ -92,9 +93,9 @@ const gitNpm = {
                         return sp('git reset --hard ' + versions[version].hash, {
                             cwd: config.path.befe + version,
                             verbose: true
-                        })
-                    })
-                promiseArray.push(p)
+                        });
+                    });
+                promiseArray.push(p);
 
             }
         }
@@ -112,15 +113,15 @@ const gitNpm = {
             } else {
                 if (argv1 && version === argv1) {
                     let p = sp('open -a SourceTree ' + version, {
-                            cwd: config.path.befe,
-                            verbose: true
-                        });
+                        cwd: config.path.befe,
+                        verbose: true
+                    });
                     promiseArray.push(p);
                 } else if (!argv1) {
                     let p = sp('open -a SourceTree ' + version, {
-                            cwd: config.path.befe,
-                            verbose: true
-                        });
+                        cwd: config.path.befe,
+                        verbose: true
+                    });
                     promiseArray.push(p);
                 }
 
@@ -128,13 +129,13 @@ const gitNpm = {
         }
         const promise = Promise.all(promiseArray).then(function (re) {
             utils.logs(['info:已打开公用库']);
-        })
+        });
     }
-}
+};
 
 // 程序入口
 switch (command) {
-    case 'init': 
+    case 'init':
         gitNpm.init();
         break;
     case 'update':

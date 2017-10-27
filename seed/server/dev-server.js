@@ -13,7 +13,7 @@ const utils = require('utils');
 const config = require('config');
 const birdv3 = require('birdv3');
 const birdfile = path.resolve('seed/node_modules/config/bird/birdfile');
-const port = 3000;
+const port = process.argv[2] || 3000;
 const fs = require('fs');
 const htmlPath = config.path.templateDevHtml;
 

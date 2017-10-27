@@ -1,0 +1,5 @@
+# 项目源码所在icode位置
+export dev_path=/Users/baidu/work/fe-car
+
+# 放构建后需要发版的icode位置
+export release_path=/Users/baidu/work/fin-css

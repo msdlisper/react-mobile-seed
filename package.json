@@ -9,7 +9,9 @@
     "dev": "node seed/server/dev-server",
     "dest": "node seed/server/dest-server",
     "prod": "node seed/server/prod-server",
-    "gn": "node seed/commander-line/git-npm"
+    "gn": "node seed/commander-line/git-npm",
+    "release": "bash seed/commander-line/release.sh",
+    "generate": "bash seed/commander-line/generate.sh"
   },
   "keywords": [],
   "author": "",

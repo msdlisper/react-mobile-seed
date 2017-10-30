@@ -45,7 +45,10 @@ export default class extends Component {
     render() {
         return h.div(style.locals.pageUse, {},
             h.img({src: messageIcon}),
-            h.div('test', {}, 'hi ' + moment().format('MMMM Do YYYY, h:mm:ss a'))
+            h.div('test', {}, 'hi ' + moment().format('MMMM Do YYYY, h:mm:ss a')),
+            h.div('button', {},
+                h.span({}, '已通过')
+            )
         );
     }
 }

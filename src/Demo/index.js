@@ -16,6 +16,7 @@ import {
     h,
     Provider
 } from 'utils/default';
+import './page-style.less';
 import {
     Message
 } from 'component/Message';

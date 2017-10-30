@@ -1,24 +1,38 @@
-:local(.pageUse) {
+:local(.pageUse).user-page {
+  position: relative;
   height: 100%;
-  .test {
-    width: 800px;
-  }
-  .button {
-    float: left;
-    margin: 0 0 9px 10px;
-    padding: 0 9px;
-    // height: 28px;
-    font-size: 0;
-    color: #509af6;
-    line-height: 30px;
-    background-color: #fff;
-    border-radius: 3px;
-    background: #2280ed;
-    border: 1px solid #509af6;
-    span {
-    	font-size: 14px;
-    	color: #fff;
-    	vertical-align: middle;
+  box-shadow: 0 24px 16px -16px rgba(199, 208, 225, 0.3) inset;
+
+  .user-head {
+    height: 200px;
+    padding-left: 24px;
+    padding-top: 72px;
+    overflow: hidden;
+    .img {
+      float: left;
+      border-radius: 50%;
+      margin-right: 24px;
+      overflow: hidden;
+      text-align: center;
+      img {
+        width: 124px;
+        height: 124px;
+        display: block;
+      }
+    }
+    .info {
+      float: left;
+      height: 124px;
+      .name {
+        font-size: 36px; /*px*/
+        color: #2b3138; 
+        line-height: 62px;
+      }
+      .department {
+        font-size: 32px; /*px*/
+        color: #aaa;
+        line-height: 62px;
+      }
     }
   }
 }

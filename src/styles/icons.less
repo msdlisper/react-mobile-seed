@@ -1,0 +1,32 @@
+@import "~svg/output/svg-symbols.css";
+
+@color-gray: #9eacb9;
+@color-blue: #63a3f7;
+
+.erp-icon-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+
+  .erp-icon {
+    display: block;
+  }
+}
+.svg-icon-lib {
+  width: 0;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.svg-symbol{ 
+  &.icon-home {
+    width: 12.9px; /*no*/
+    height: 12px; /*no*/
+    &.gray {
+      fill: @color-gray;
+    }
+    &.blue {
+      fill: @color-blue;
+    }
+  }
+}

@@ -29,6 +29,13 @@ seed/node_modules/config/bird/server/global.js
 ### pix? em? rem?
 本项目使用淘宝flexible方案适应移动端屏幕, 在写代码时用px, 最后转成rem(webpack 的 px2rem loader完成)
 
+### 如果要使用svg
+请把svg的源文件放在src/svg/source,
+然后执行
+```
+yarn svg
+```
+
 
 # how to build?
 

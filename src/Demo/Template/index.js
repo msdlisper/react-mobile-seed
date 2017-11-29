@@ -59,6 +59,9 @@ export default class extends Component {
                     h.div('name', {}, this.user.userName),
                     h.div('department', {}, this.user.departmentName)
                 )
+            ),
+            h.div('user-info', {},
+                h.spansvg('icon-home blue', 'icon', {})
             )
         );
     }

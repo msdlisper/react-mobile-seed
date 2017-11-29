@@ -48,10 +48,12 @@ const start = function () {
     app.all('/*.html', function (req, res) {
         let pathName = /(?:\/)(\w+?)(?=.html)/.exec(req.path)[1];
         const html = fs.readFileSync(htmlPath).toString();
+        let svg = fs.readFileSync(config.path.svg + 'output/svg-symbols.svg').toString();
         // 模板替换
         const devHtml = utils.replaceTemplate(html, {
             envPrefix: 'dev', // #TODO 根据输入参数来指定发版的前缀
-            entryName: pathName
+            entryName: pathName,
+            svg: svg
         });
         res.send(devHtml);
     });

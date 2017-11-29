@@ -40,7 +40,7 @@ const start = function () {
         const prodHtml = utils.replaceTemplate(htmlContent, {
             buildTime: utils.getBuildTime(),
             entryName: key,
-            envPrefix: env || 'qa' // #TODO 根据输入参数来指定发版的前缀
+            envPrefix: env || 'qa' 
         });
         fs.writeFileSync(config.path.destTargetHtml + key + '.html', prodHtml);
     })

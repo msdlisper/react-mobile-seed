@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-if [ -f "./config.sh" ]; then
-	source ./config.sh
+#
+CURDIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd )
+
+if [ -f "${CURDIR}/config.sh" ]; then
+	source $CURDIR/config.sh
 
 	#config:
-	prod=$dev_path/dist/release
+	prod=$dev_path/$dev_path_dest
 	echo "-----------发版-------------"
 	echo "icode-release 路径: " $release_path
 	echo "需要发版的项目路径: " $dev_path
@@ -41,9 +44,9 @@ if [ -f "./config.sh" ]; then
 
     ## 复制
     echo "先将icode上清空"
-    rm -rf $release_path/src/main/webapp/dist/*
+    rm -rf $release_path/$release_path_dist/*
     echo "复制构建后的代码到icode..."
-    cp -rf $prod/* $release_path/src/main/webapp/dist
+    cp -rf $prod/* $release_path/$release_path_dist
 
     ## 提交icode
 	echo "add Icode...."
@@ -56,3 +59,4 @@ if [ -f "./config.sh" ]; then
 else
 	echo "config.sh 不存在, 请参照 config_example.sh 创建一个你的发布配置文件"
 fi
+

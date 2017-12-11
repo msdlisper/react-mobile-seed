@@ -1,3 +1,8 @@
+/**
+ * @file --
+ * @author zhangpeng
+ */
+
 const config = require('config');
 const g = require('utils/generate-symbols');
 

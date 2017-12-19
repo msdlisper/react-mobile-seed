@@ -36,11 +36,13 @@ const start = function () {
     // 模板替换
     const entries = require('build/entry.config');
     webpackConfig.entry = entries;
+    let svg = fs.readFileSync(config.path.svg + 'output/svg-symbols.svg').toString();
     _.each(entries, function (value, key){
         const prodHtml = utils.replaceTemplate(htmlContent, {
             buildTime: utils.getBuildTime(),
             entryName: key,
-            envPrefix: env || 'qa'
+            envPrefix: env || 'qa',
+            svg: svg
         });
         fs.writeFileSync(config.path.destTargetHtml + key + '.html', prodHtml);
     })

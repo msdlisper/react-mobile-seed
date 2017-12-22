@@ -103,6 +103,25 @@ const gitNpm = {
             utils.logs(['info:已将所有befe库更新到指定版本']);
         })
     },
+    pull: function () {
+        const versions = gitNpm.readVersion();
+        let promiseArray = [];
+        for (const version in versions) {
+            if (!fs.existsSync(config.path.befe + version)) {
+                utils.logs(['info:不存在' + version + ', 请先yarn gn init']);
+            } else {
+                let p = sp('git pull', {
+                        cwd: config.path.befe + version,
+                        verbose: true
+                    })
+                promiseArray.push(p);
+
+            }
+        }
+        const promise = Promise.all(promiseArray).then(function (re) {
+            utils.logs(['info:已将所有befe库从远程更新! 如果要回退, 请git checkout versions.json, 再yarn gn update']);
+        })
+    },
     stree: function () {
 
         const versions = gitNpm.readVersion();
@@ -140,6 +159,9 @@ switch (command) {
         break;
     case 'update':
         gitNpm.update();
+        break;
+    case 'pull':
+        gitNpm.pull();
         break;
     case 'lock':
         gitNpm.lock();

@@ -62,7 +62,10 @@ bash seed/commander-line/release.sh
 // 先初始化库
 yarn gn init
 
-// 从远程拉代码后需要update库里的代码, 以保持与远程一致  
+// 从远程更新库, 也可以gn yarn stree 然后通过sourceTree来拉取
+yarn gn pull
+
+// 从远程拉代码后需要update库里的代码, 以保持与本地仓库和visions.json里的版本一致 
 yarn gn update
 
 // 本地修改库里的东后, 需要将version.js更新, 以方便其它同学拉代码后, 能根据version.js来更新库 
@@ -70,4 +73,13 @@ yarn gn lock
 
 // 打开库的sourceTree
 yarn gn stree [utils/erp-comps-mobiles]
+
+// 配置入口, 在node_modules/build/entry.config.js里添加组件的demo入口
+module.exports = {
+    index: './src/Template/index.js',
+    demo: './src/Demo/index.js',
+    components: './src/node_modules/@befe/erp-comps-mobile-demo/Demo/index.js'
+}
+
+// 最后在 components.html#/ 访问组件库的demo
 ```

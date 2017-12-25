@@ -16,11 +16,18 @@ cd ../your-project-name
 刚进入项目时
 ```
 yarn
-yarn dll
-yarn dev
+yarn dll # 打dll文件
+yarn gn init # 更新组件库
+yarn dev # 启动服务, 默认是3000端口, 需要其它端口可以这样 yarn dev 8000
+open http://localhost:3000/demo.html#/template
 ```
 
-### 要加入新的入口, 配置目录在
+执行已上操作,以后只需要 yarn dev 就可以了
+
+### 加入新模块
+
+参考src/Demo
+并配置好入口
 seed/node_modules/build/entry.config.js
 
 ### bird配制文件:

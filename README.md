@@ -58,6 +58,7 @@ bash seed/commander-line/release.sh
 # how to use common components?
 - 位置: node_modules/@befe
 - 使用
+
 ```
 // 先初始化库
 yarn gn init

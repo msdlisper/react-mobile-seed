@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="32px" viewBox="0 0 35 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-28.3%" y="-31.8%" width="165.7%" height="172.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.912547832   0 0 0 0 0.728950782   0 0 0 0 0.148184604  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="消费记录确定方案" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-47.000000, -89.000000)">
+        <g id="入口" transform="translate(0.000000, 64.000000)" fill="#FFFFFF">
+            <g id="发票识别" transform="translate(37.000000, 15.000000)">
+                <g id="发票识别icon" filter="url(#filter-1)" transform="translate(14.000000, 14.000000)">
+                    <path d="M21.9481132,22 L2.80188679,22 C1.25431132,22 0,20.7689167 0,19.25 L0,5.5 C0,3.98108333 1.25431132,2.75 2.80188679,2.75 L7.00471698,2.75 L7.47169811,1.83333333 C7.47169811,0.820875 8.30806132,0 9.33962264,0 L15.4103774,0 C16.4419387,0 17.2783019,0.820875 17.2783019,1.83333333 L17.745283,2.75 L21.9481132,2.75 C23.4956887,2.75 24.75,3.98108333 24.75,5.5 L24.75,19.25 C24.75,20.7689167 23.4956887,22 21.9481132,22 Z M12.1415094,16.5 C14.720575,16.5 16.8113208,14.4479718 16.8113208,11.9166667 C16.8113208,9.38536156 14.720575,7.33333333 12.1415094,7.33333333 C9.56244386,7.33333333 7.47169811,9.38536156 7.47169811,11.9166667 C7.47169811,14.4479718 9.56244386,16.5 12.1415094,16.5 Z M20.0801887,9.16666667 C21.1118149,9.16666667 21.9481132,8.34585537 21.9481132,7.33333333 C21.9481132,6.32081129 21.1118149,5.5 20.0801887,5.5 C19.0485624,5.5 18.2122642,6.32081129 18.2122642,7.33333333 C18.2122642,8.34585537 19.0485624,9.16666667 20.0801887,9.16666667 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

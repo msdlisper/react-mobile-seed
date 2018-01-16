@@ -61,7 +61,7 @@ export default class extends Component {
                 )
             ),
             h.div('user-info', {},
-                h.spansvg('icon-home blue', 'icon', {})
+                h.spansvg('icon-camera blue', 'icon', {})
             )
         );
     }

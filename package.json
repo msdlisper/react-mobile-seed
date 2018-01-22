@@ -24,6 +24,7 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-stage-0": "6.24.1",
     "birdv3": "0.3.30",
+    "cheerio": "0.22.0",
     "colors": "1.1.2",
     "css-loader": "0.28.4",
     "delete": "1.1.0",
@@ -32,15 +33,16 @@
     "fs-extra": "^4.0.2",
     "happypack": "4.0.0",
     "less-loader": "4.0.5",
+    "shell-promise": "1.0.0",
     "style-loader": "0.18.2",
     "webpack": "3.1.0",
     "webpack-bundle-analyzer": "2.8.3",
     "webpack-dev-middleware": "1.12.0",
-    "cheerio": "0.22.0",
-    "shell-promise": "1.0.0"
+    "url-loader": "0.6.2"
   },
   "dependencies": {
     "fastdom": "1.0.6",
+    "hi-ui": "^0.0.9",
     "less": "2.7.0",
     "lodash": "4.17.4",
     "mobx": "3.3.1",

@@ -17,7 +17,7 @@ import style from './page.use.less';
 import fastdom from 'fastdom';
 import moment from 'moment';
 import messageIcon from 'images/message.png';
-
+import {Dialog}  from 'hi-ui';
 @inject('context') @observer
 export default class extends Component {
     constructor(props) {
@@ -35,6 +35,10 @@ export default class extends Component {
         style.use();
     }
 
+    componentDidMount() {
+        
+    }
+
     componentWillReceiveProps(nextProps) {}
 
     componentWillUnmount() {
@@ -44,7 +48,18 @@ export default class extends Component {
     }
 
 
-
+    showHello = (content) => {
+         /* 普通弹窗 */
+         const dialog = new Dialog({
+             target: document.querySelector('.dialog'),
+             data: {
+                 title: 'HIUI',
+                 content
+             }
+         });
+         dialog.show();
+         
+    }
 
 
     render() {
@@ -60,9 +75,13 @@ export default class extends Component {
                     h.div('department', {}, this.user.departmentName)
                 )
             ),
-            h.div('user-info', {},
+            h.div('user-info', {
+                ref: r => r && (this.dialogRef = r),
+                onClick: e => this.showHello('hi'),
+            },
                 h.spansvg('icon-camera blue', 'icon', {})
-            )
+            ),
+            h.div('dialog', {})
         );
     }
 }

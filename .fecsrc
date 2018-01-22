@@ -1,0 +1,26 @@
+{
+    "eslint": {
+        "env": {
+            "es6": true,
+            "node": true,
+            "browser": true
+        },
+
+        "rules": {
+            "comma-dangle": [
+                "error",
+                {
+                    "arrays": "ignore",
+                    "objects": "ignore",
+                    "imports": "ignore",
+                    "exports": "ignore",
+                    "functions": "never",
+                }
+            ],
+            "semi": 'never',
+            "no-var": 'never',
+            "camelcase": 'never',
+            "no-undef": 'never'
+        }
+    }
+}

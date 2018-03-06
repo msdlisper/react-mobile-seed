@@ -51,6 +51,7 @@
     "px2rem-loader": "0.1.7",
     "react": "16.0.0",
     "react-dom": "16.0.0",
+    "fastclick": "1.0.6",
     "react-router": "3.0.5"
   }
 }
